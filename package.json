@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/narfblaat/fancy-name",
   "dependencies": {
-    "express": "^4.12.4"
+    "express": "^4.12.4",
+    "pg": "^4.3.0"
   }
 }

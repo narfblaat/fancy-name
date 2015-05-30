@@ -8,15 +8,10 @@
     <script>
         (function () {
             var fancyApp = angular.module('fancyApp', []);
-            fancyApp.controller('ItemCtrl', function ($scope) {
-                // Added in Step 2
-                $scope.articles = [
-                    { name: "Dusch DAS", price: "EUR 0,50" },
-                    { name: "Alpro Soya Pudding", price: "EUR 1,99" },
-                    { name: "Alpro Soya Yoghurt", price: "EUR 1,69" },
-                    { name: "Julian", price: "unbezahlbar" }
-                ];
-
+            fancyApp.controller('ItemCtrl', function ($scope, $http) {
+                $http.get('/articles').success(function(data) {
+                    $scope.articles = data;
+                });
                 // Added in Step 4
                 $scope.order = 'price';
             });
