@@ -31,14 +31,16 @@
 <table class="table table-striped table-hover">
     <thead>
         <tr>
+            <th>EAN</th>
             <th>Produkt</th>
             <th>Preis</th>
         </tr>
     </thead>
     <tbody>
         <tr ng-repeat="article in articles">
-            <td>{{article.name}}</td>
-            <td>{{article.price}}</td>
+            <td>{{article.ean}}</td>
+            <td>{{article.title}}</td>
+            <td>{{article.rrp}}</td>
         </tr>
     </tbody>
 </table>
@@ -57,7 +59,7 @@
             </div>
             <div class="col-md-10">                            
                 <ul>
-                    <li ng-repeat="article in articles | filter:query">{{article.name}}</li>
+                    <li ng-repeat="article in articles | filter:query">{{article.title}}</li>
                 </ul>
             </div>
         </div>
@@ -90,7 +92,7 @@
             </div>
             <div class="col-md-10">                            
                 <ul>
-                    <li ng-repeat="article in articles | filter:query | orderBy:order">{{article.name}}</li>
+                    <li ng-repeat="article in articles | filter:query | orderBy:order">{{article.title}}</li>
                 </ul>
             </div>
         </div>
